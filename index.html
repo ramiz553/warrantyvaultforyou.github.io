@@ -4,68 +4,112 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Warranty Vault</title>
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f5f7fa;
       color: #222;
     }
 
+    /* Header */
     header {
-      background: #111;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      background: #ffffff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #0078ff;
+      font-weight: 500;
+    }
+
+    /* Hero */
     .hero {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: auto;
     }
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .hero p {
-      font-size: 18px;
+      font-size: 20px;
       color: #555;
-      max-width: 600px;
-      margin: 10px auto 30px;
+      margin-bottom: 40px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 24px;
+      padding: 14px 28px;
       background: #0078ff;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 16px;
-      margin: 10px;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background: white;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 18px;
+      margin: 10px;
+      transition: 0.2s;
     }
 
-    .section h2 {
-      margin-top: 0;
+    .btn:hover {
+      background: #005fcc;
     }
 
-    footer {
-      text-align: center;
+    /* Features */
+    .features {
+      max-width: 1100px;
+      margin: 60px auto;
       padding: 20px;
-      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .feature-box h3 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .feature-box p {
+      color: #555;
+      font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
       background: #111;
       color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 60px;
     }
 
     footer a {
@@ -79,32 +123,42 @@
 
 <header>
   <h1>Warranty Vault</h1>
+  <nav>
+    <a href="/support.html">Support</a>
+    <a href="/privacy-policy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </nav>
 </header>
 
-<div class="hero">
-  <h1>Never Miss a Warranty Again</h1>
-  <p>Warranty Vault helps you store, track, and manage all your receipts, warranties, and product documents in one secure place.</p>
+<section class="hero">
+  <h2>Never Miss a Warranty Again</h2>
+  <p>Store, track, and manage all your receipts, warranties, and product documents in one secure place.</p>
 
   <a class="btn" href="/support.html">Get Support</a>
   <a class="btn" href="/privacy-policy.html">Privacy Policy</a>
-</div>
+</section>
 
-<div class="section">
-  <h2>About Warranty Vault</h2>
-  <p>Warranty Vault is designed to make your life easier by keeping all your warranty information organized and accessible. Upload receipts, track expiry dates, and manage your product history effortlessly.</p>
-</div>
+<section class="features">
+  <div class="feature-box">
+    <h3>Smart Receipt Storage</h3>
+    <p>Upload receipts and documents instantly with secure cloud storage.</p>
+  </div>
 
-<div class="section">
-  <h2>Legal & Policies</h2>
-  <ul>
-    <li><a href="/terms.html">Terms of Service</a></li>
-    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-    <li><a href="/refund-policy.html">Refund Policy</a></li>
-    <li><a href="/acceptable-use.html">Acceptable Use Policy</a></li>
-    <li><a href="/eula.html">End-User License Agreement</a></li>
-    <li><a href="/legal.html">Legal Disclaimer</a></li>
-  </ul>
-</div>
+  <div class="feature-box">
+    <h3>Warranty Tracking</h3>
+    <p>Automatic expiry reminders so you never lose coverage.</p>
+  </div>
+
+  <div class="feature-box">
+    <h3>Product History</h3>
+    <p>Keep a full record of every item you own — organized and accessible.</p>
+  </div>
+
+  <div class="feature-box">
+    <h3>Secure & Private</h3>
+    <p>Your data is protected with industry‑standard security and encryption.</p>
+  </div>
+</section>
 
 <footer>
   <p>© 2026 Warranty Vault — All Rights Reserved</p>
@@ -113,3 +167,4 @@
 
 </body>
 </html>
+
