@@ -151,187 +151,6 @@
       background: var(--accent-dark);
     }
 
-    /* Features */
-    .features {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      animation: fadeInUp 1s ease;
-    }
-
-    .feature-box {
-      background: var(--card);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: transform 0.2s;
-    }
-
-    .feature-box:hover {
-      transform: translateY(-5px);
-    }
-
-    /* Dashboard Preview */
-    .dashboard {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 20px;
-      animation: fadeInUp 1s ease;
-    }
-
-    .dashboard h2 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .dashboard-box {
-      background: var(--card);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-
-    /* Pricing */
-    .pricing {
-      max-width: 900px;
-      margin: 60px auto;
-      text-align: center;
-      animation: fadeInUp 1s ease;
-    }
-
-    .pricing h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    .pricing-box {
-      background: var(--card);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      margin: 20px auto;
-      max-width: 500px;
-    }
-
-    /* About */
-    .about {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 20px;
-      animation: fadeInUp 1s ease;
-    }
-
-    .about h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    /* FAQ */
-    .faq {
-      max-width: 900px;
-      margin: 60px auto;
-      animation: fadeInUp 1s ease;
-    }
-
-    .faq h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    .faq-item {
-      background: var(--card);
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    /* Contact Form */
-    .contact {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 20px;
-      animation: fadeInUp 1s ease;
-    }
-
-    .contact input,
-    .contact textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-
-    .contact button {
-      padding: 12px 20px;
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 18px;
-    }
-
-    /* Socials */
-    .socials {
-      text-align: center;
-      margin: 60px auto;
-      animation: fadeInUp 1s ease;
-    }
-
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin: 10px;
-      font-size: 20px;
-      color: var(--accent);
-      text-decoration: none;
-      padding: 12px 20px;
-      background: var(--card);
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      transition: transform 0.2s, background 0.2s;
-    }
-
-    .social-link:hover {
-      transform: translateY(-4px);
-      background: var(--accent);
-      color: white;
-    }
-
-    .icon {
-      font-size: 22px;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--footer-bg);
-      color: var(--footer-text);
-      text-align: center;
-      padding: 30px;
-      margin-top: 60px;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
     /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -349,6 +168,7 @@
 
 <header>
   <div class="logo">
+    <!-- You can replace this logo URL with your own -->
     <img src="https://i.imgur.com/2JYhZQW.png" alt="Logo">
     <h1>Warranty Vault</h1>
   </div>
@@ -373,6 +193,8 @@
   <a class="btn" href="/privacy-policy.html">Privacy Policy</a>
 </section>
 
+<!-- END OF PART 1 -->
+  <!-- FEATURES SECTION -->
 <section class="features">
   <div class="feature-box">
     <h3>Smart Receipt Storage</h3>
@@ -395,6 +217,7 @@
   </div>
 </section>
 
+<!-- DASHBOARD PREVIEW -->
 <section class="dashboard">
   <h2>Dashboard Preview</h2>
 
@@ -416,6 +239,7 @@
   </div>
 </section>
 
+<!-- PRICING SECTION -->
 <section class="pricing">
   <h2>Simple, Honest Pricing</h2>
 
@@ -433,11 +257,16 @@
   </div>
 </section>
 
+<!-- ABOUT SECTION -->
 <section class="about">
   <h2>About Warranty Vault</h2>
-  <p>Warranty Vault was created to solve a simple problem: people lose receipts and forget warranty expiry dates. Our mission is to help every household protect their purchases with simple, secure warranty tracking.</p>
+  <p>
+    Warranty Vault was created to solve a simple problem: people lose receipts and forget warranty expiry dates.
+    Our mission is to help every household protect their purchases with simple, secure warranty tracking.
+  </p>
 </section>
 
+<!-- FAQ SECTION -->
 <section class="faq">
   <h2>Frequently Asked Questions</h2>
 
@@ -457,6 +286,8 @@
   </div>
 </section>
 
+<!-- END OF PART 2 -->
+<!-- CONTACT FORM -->
 <section class="contact">
   <h2>Contact Us</h2>
 
@@ -468,6 +299,7 @@
   </form>
 </section>
 
+<!-- SOCIALS -->
 <section class="socials">
   <h2>Follow Us</h2>
 
@@ -484,16 +316,19 @@
   </a>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Warranty Vault — All Rights Reserved</p>
   <p><a href="/support.html">Contact Support</a></p>
 </footer>
 
+<!-- JAVASCRIPT -->
 <script>
   const toggle = document.getElementById("themeToggle");
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("navMenu");
 
+  // Dark / Light Mode Toggle
   toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     toggle.textContent = document.body.classList.contains("dark")
@@ -501,6 +336,7 @@
       : "Dark Mode";
   });
 
+  // Mobile Hamburger Menu
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("show");
   });
@@ -508,3 +344,7 @@
 
 </body>
 </html>
+
+<!-- END OF PART 3 -->
+
+
