@@ -17,6 +17,11 @@
       --accent-dark: #005fcc;
       --footer-bg: #111;
       --footer-text: #fff;
+
+      /* Gold accent for tabs and highlights */
+      --gold-start: #f5d36b;
+      --gold-end: #c9a23f;
+      --gold-border: #b38b2c;
     }
 
     body.dark {
@@ -40,14 +45,14 @@
     /* Header */
     header {
       background: var(--card);
-      padding: 20px 40px;
+      padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
     }
 
     header .logo {
@@ -57,28 +62,52 @@
     }
 
     header .logo img {
-      height: 50px;
+      height: 60px;
       width: auto;
-      border-radius: 6px;
+      object-fit: contain;
+      display: block;
+    }
+
+    header .logo h1 {
+      font-size: 22px;
+      margin: 0;
     }
 
     nav {
       display: flex;
-      gap: 20px;
+      gap: 18px;
+      align-items: center;
     }
 
     nav a {
       text-decoration: none;
       color: var(--accent);
       font-weight: 500;
+      font-size: 15px;
     }
 
-    /* Mobile Menu */
+    /* Hamburger */
     .hamburger {
       display: none;
-      font-size: 34px;
+      font-size: 32px;
       cursor: pointer;
-      margin-left: 20px;
+      margin-left: 16px;
+      color: var(--accent);
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    /* Theme Toggle */
+    #themeToggle {
+      margin-left: 16px;
+      padding: 8px 14px;
+      background: var(--accent);
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+      font-size: 14px;
+      white-space: nowrap;
     }
 
     @media (max-width: 768px) {
@@ -86,12 +115,13 @@
         display: none;
         flex-direction: column;
         background: var(--card);
-        padding: 20px;
+        padding: 16px;
         position: absolute;
-        top: 80px;
-        right: 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        top: 70px;
+        right: 16px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         border-radius: 10px;
+        min-width: 180px;
       }
 
       nav.show {
@@ -103,48 +133,36 @@
       }
     }
 
-    /* Theme Toggle */
-    #themeToggle {
-      margin-left: 20px;
-      padding: 8px 14px;
-      background: var(--accent);
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-      border: none;
-      font-size: 14px;
-    }
-
     /* Hero */
     .hero {
       text-align: center;
-      padding: 80px 20px;
+      padding: 70px 20px 40px;
       max-width: 800px;
       margin: auto;
       animation: fadeIn 1s ease;
     }
 
     .hero h2 {
-      font-size: 48px;
-      margin-bottom: 20px;
+      font-size: 40px;
+      margin-bottom: 16px;
       font-weight: 700;
     }
 
     .hero p {
-      font-size: 20px;
+      font-size: 18px;
       color: #555;
-      margin-bottom: 40px;
+      margin-bottom: 28px;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 28px;
+      padding: 12px 24px;
       background: var(--accent);
       color: white;
       text-decoration: none;
       border-radius: 8px;
-      font-size: 18px;
-      margin: 10px;
+      font-size: 16px;
+      margin: 8px;
       transition: 0.2s;
     }
 
@@ -155,126 +173,302 @@
     /* Features */
     .features {
       max-width: 1100px;
-      margin: 60px auto;
-      padding: 20px;
+      margin: 40px auto;
+      padding: 0 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
       animation: fadeInUp 1s ease;
     }
 
     .feature-box {
       background: var(--card);
-      padding: 30px;
+      padding: 24px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      text-align: center;
+      text-align: left;
       transition: transform 0.2s;
     }
 
     .feature-box:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
+    }
+
+    .feature-box h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
     }
 
     /* Dashboard Preview */
     .dashboard {
       max-width: 1100px;
-      margin: 60px auto;
-      padding: 20px;
+      margin: 40px auto;
+      padding: 0 20px;
       animation: fadeInUp 1s ease;
     }
 
     .dashboard h2 {
       text-align: center;
-      font-size: 36px;
-      margin-bottom: 20px;
+      font-size: 30px;
+      margin-bottom: 18px;
     }
 
     .dashboard-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
     }
 
     .dashboard-box {
       background: var(--card);
-      padding: 30px;
+      padding: 24px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      text-align: center;
+      text-align: left;
     }
 
-    /* Pricing */
-    .pricing {
-      max-width: 900px;
-      margin: 60px auto;
-      text-align: center;
+    /* Pricing Tabs Section */
+    .pricing-section {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
       animation: fadeInUp 1s ease;
     }
 
-    .pricing h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
+    .pricing-section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
-    .pricing-box {
+    .pricing-section p.subtitle {
+      text-align: center;
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    .pricing-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .pricing-tab {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.08);
       background: var(--card);
-      padding: 30px;
-      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #555;
+      transition: 0.2s;
+    }
+
+    .pricing-tab span.icon {
+      font-size: 16px;
+    }
+
+    .pricing-tab.active {
+      color: #222;
+      border: 1px solid var(--gold-border);
+      background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .pricing-tab.active span.icon {
+      color: #222;
+    }
+
+    .pricing-tab:hover:not(.active) {
+      background: rgba(0,0,0,0.03);
+    }
+
+    .pricing-content {
+      margin-top: 10px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .pricing-card {
+      background: var(--card);
+      padding: 22px;
+      border-radius: 14px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      margin: 20px auto;
-      max-width: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    .pricing-card .price-line {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      font-size: 14px;
+    }
+
+    .pricing-card ul li {
+      margin-bottom: 6px;
+    }
+
+    .pricing-card ul li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.06);
+      color: #444;
+    }
+
+    .pricing-card.highlight {
+      border: 1px solid var(--gold-border);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .pricing-card.highlight::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(245,211,107,0.18), rgba(201,162,63,0.18));
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .pricing-card.highlight > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Comparison table */
+    .pricing-table-wrapper {
+      margin-top: 10px;
+      overflow-x: auto;
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .pricing-table th {
+      background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
+      color: #222;
+      font-weight: 600;
+    }
+
+    .pricing-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pricing-table td.plan-name {
+      font-weight: 600;
     }
 
     /* About */
     .about {
       max-width: 900px;
-      margin: 60px auto;
-      padding: 20px;
+      margin: 50px auto;
+      padding: 0 20px;
       animation: fadeInUp 1s ease;
     }
 
     .about h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
+      font-size: 28px;
+      margin-bottom: 12px;
     }
 
     /* FAQ */
     .faq {
       max-width: 900px;
-      margin: 60px auto;
+      margin: 40px auto;
+      padding: 0 20px;
       animation: fadeInUp 1s ease;
     }
 
     .faq h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
+      font-size: 28px;
+      margin-bottom: 12px;
     }
 
     .faq-item {
       background: var(--card);
-      padding: 20px;
+      padding: 18px;
       border-radius: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 16px;
     }
 
     /* Contact Form */
     .contact {
       max-width: 900px;
-      margin: 60px auto;
-      padding: 20px;
+      margin: 40px auto;
+      padding: 0 20px;
       animation: fadeInUp 1s ease;
+    }
+
+    .contact h2 {
+      font-size: 26px;
+      margin-bottom: 12px;
     }
 
     .contact input,
     .contact textarea {
       width: 100%;
       padding: 12px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       border-radius: 8px;
       border: 1px solid #ccc;
-      font-size: 16px;
+      font-size: 15px;
+      background: var(--card);
+      color: var(--text);
     }
 
     .contact button {
@@ -284,25 +478,31 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     /* Socials */
     .socials {
       text-align: center;
-      margin: 60px auto;
+      margin: 40px auto;
+      padding: 0 20px;
       animation: fadeInUp 1s ease;
+    }
+
+    .socials h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
     }
 
     .social-link {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin: 10px;
-      font-size: 20px;
+      gap: 8px;
+      margin: 8px;
+      font-size: 16px;
       color: var(--accent);
       text-decoration: none;
-      padding: 12px 20px;
+      padding: 10px 16px;
       background: var(--card);
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
@@ -310,13 +510,13 @@
     }
 
     .social-link:hover {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
       background: var(--accent);
       color: white;
     }
 
-    .icon {
-      font-size: 22px;
+    .social-link .icon {
+      font-size: 18px;
     }
 
     /* Footer */
@@ -324,8 +524,9 @@
       background: var(--footer-bg);
       color: var(--footer-text);
       text-align: center;
-      padding: 30px;
-      margin-top: 60px;
+      padding: 24px;
+      margin-top: 40px;
+      font-size: 14px;
     }
 
     footer a {
@@ -350,7 +551,7 @@
 
 <header>
   <div class="logo">
-    <!-- YOUR REAL LOGO -->
+    <!-- Adjust filename if needed (Logo.png vs logo.png) -->
     <img src="/assets/logo.png" alt="Warranty Vault Logo">
     <h1>Warranty Vault</h1>
   </div>
@@ -418,20 +619,258 @@
   </div>
 </section>
 
-<section class="pricing">
-  <h2>Simple, Honest Pricing</h2>
+<!-- NEW PRICING SECTION (Tabs + Cards + Comparison Tables) -->
+<section class="pricing-section" id="pricing">
+  <h2>Lifetime Plans & Pricing</h2>
+  <p class="subtitle">Choose the plan that fits you — individual or business, all with lifetime access.</p>
 
-  <div class="pricing-box">
-    <h3>Starter — Free</h3>
-    <p>Perfect for individuals tracking warranties for home, tech, and appliances.</p>
-    <p>✔ Store receipts</p>
-    <p>✔ Track warranty expiry</p>
-    <p>✔ Access from any device</p>
+  <div class="pricing-tabs">
+    <button class="pricing-tab active" data-tab="individual">
+      <span class="icon">👤</span>
+      Individual Plans
+    </button>
+    <button class="pricing-tab" data-tab="business">
+      <span class="icon">🏢</span>
+      Business Plans
+    </button>
   </div>
 
-  <div class="pricing-box">
-    <h3>Pro — Coming Soon</h3>
-    <p>Advanced reminders, shared vaults, and priority support.</p>
+  <div class="pricing-content" id="pricing-individual">
+    <div class="pricing-grid">
+      <!-- Free Starter -->
+      <div class="pricing-card">
+        <div class="pricing-badge">Default on signup</div>
+        <h3>Free (Starter)</h3>
+        <p class="price-line">Included when someone signs up.</p>
+        <ul>
+          <li>Up to 10 receipts</li>
+          <li>Basic OCR scanning</li>
+          <li>Basic expiry reminders</li>
+          <li>1 personal vault</li>
+        </ul>
+      </div>
+
+      <!-- Pro Lifetime -->
+      <div class="pricing-card highlight">
+        <div class="pricing-badge">Most Popular</div>
+        <h3>Pro Lifetime — $19.99 · 1 account</h3>
+        <p class="price-line">Lifetime access for one individual account.</p>
+        <ul>
+          <li>Unlimited receipts & warranties</li>
+          <li>Priority OCR receipt scanning</li>
+          <li>Export to PDF & CSV</li>
+          <li>Smart expiry reminders</li>
+          <li>Cloud‑synced personal vault</li>
+        </ul>
+      </div>
+
+      <!-- Family Lifetime -->
+      <div class="pricing-card">
+        <div class="pricing-badge">Household</div>
+        <h3>Family Lifetime — $39.99 · up to 5 accounts</h3>
+        <p class="price-line">Perfect for families managing multiple devices and purchases.</p>
+        <ul>
+          <li>Everything in Pro Lifetime</li>
+          <li>Share with up to 5 accounts</li>
+          <li>Shared family vault</li>
+          <li>Per‑member expiry alerts</li>
+          <li>Family activity overview</li>
+        </ul>
+      </div>
+
+      <!-- Family Jumbo -->
+      <div class="pricing-card">
+        <div class="pricing-badge">Extended Family</div>
+        <h3>Family Jumbo — $79.99 · 5 accounts</h3>
+        <p class="price-line">For families who want both shared and private vaults.</p>
+        <ul>
+          <li>Everything in Family Lifetime</li>
+          <li>Every added account gets its OWN Pro Lifetime vault (private, not shared)</li>
+          <li>5 full member vaults + priority OCR for everyone</li>
+          <li>Family & individual analytics</li>
+        </ul>
+      </div>
+
+      <!-- Signature Edition -->
+      <div class="pricing-card highlight">
+        <div class="pricing-badge">Signature</div>
+        <h3>Signature Edition — $999 · up to 15 accounts</h3>
+        <p class="price-line">Brand‑focused individual experience with your own look.</p>
+        <ul>
+          <li>Your own logo & brand colours</li>
+          <li>Fully branded dashboard</li>
+          <li>Custom accents & banners</li>
+          <li>Personalised onboarding look</li>
+          <li>Up to 15 accounts</li>
+        </ul>
+      </div>
+
+      <!-- Signature Jumbo -->
+      <div class="pricing-card">
+        <div class="pricing-badge">Signature Jumbo</div>
+        <h3>Signature Jumbo — $1,999 · 15 accounts</h3>
+        <p class="price-line">For larger groups needing branded, individual vaults.</p>
+        <ul>
+          <li>Everything in Signature Edition</li>
+          <li>Every added account gets its OWN Pro Lifetime vault</li>
+          <li>15 full branded vaults + priority OCR everywhere</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Individual Comparison Table -->
+    <div class="pricing-table-wrapper">
+      <table class="pricing-table">
+        <tr>
+          <th>Plan</th>
+          <th>Accounts</th>
+          <th>Receipts & Warranties</th>
+          <th>OCR & Reminders</th>
+          <th>Branding / Extras</th>
+        </tr>
+        <tr>
+          <td class="plan-name">Free (Starter)</td>
+          <td>1</td>
+          <td>Up to 10 receipts</td>
+          <td>Basic OCR, basic expiry reminders</td>
+          <td>1 personal vault</td>
+        </tr>
+        <tr>
+          <td class="plan-name">Pro Lifetime</td>
+          <td>1</td>
+          <td>Unlimited</td>
+          <td>Priority OCR, smart expiry reminders</td>
+          <td>Cloud‑synced personal vault, export tools</td>
+        </tr>
+        <tr>
+          <td class="plan-name">Family Lifetime</td>
+          <td>Up to 5</td>
+          <td>Shared across family</td>
+          <td>Per‑member expiry alerts</td>
+          <td>Shared family vault, activity overview</td>
+        </tr>
+        <tr>
+          <td class="plan-name">Family Jumbo</td>
+          <td>5</td>
+          <td>Each member has own Pro vault</td>
+          <td>Priority OCR for everyone</td>
+          <td>Family & individual analytics</td>
+        </tr>
+        <tr>
+          <td class="plan-name">Signature Edition</td>
+          <td>Up to 15</td>
+          <td>Unlimited</td>
+          <td>Priority OCR</td>
+          <td>Custom branding, dashboard, onboarding</td>
+        </tr>
+        <tr>
+          <td class="plan-name">Signature Jumbo</td>
+          <td>15</td>
+          <td>Each account has own Pro vault</td>
+          <td>Priority OCR everywhere</td>
+          <td>15 full branded vaults</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="pricing-content" id="pricing-business" style="display:none;">
+    <div class="pricing-grid">
+      <!-- Business -->
+      <div class="pricing-card highlight">
+        <div class="pricing-badge">Core Business</div>
+        <h3>Business — $999 · up to 10 team accounts</h3>
+        <p class="price-line">For teams managing receipts, warranties, and tax‑related documents.</p>
+        <ul>
+          <li>Bulk receipt & warranty upload</li>
+          <li>Tax tagging & custom categories</li>
+          <li>Team accounts (up to 10)</li>
+          <li>Business analytics dashboard</li>
+          <li>Activity & audit logs</li>
+        </ul>
+      </div>
+
+      <!-- Business Jumbo -->
+      <div class="pricing-card">
+        <div class="pricing-badge">Business Jumbo</div>
+        <h3>Business Jumbo — $1,999 · 10 accounts</h3>
+        <p class="price-line">For teams needing both business tools and individual Pro vaults.</p>
+        <ul>
+          <li>Everything in Business</li>
+          <li>Every added account gets its OWN Pro Lifetime vault</li>
+          <li>10 full team vaults</li>
+          <li>Advanced bulk/automation tools</li>
+        </ul>
+      </div>
+
+      <!-- Elite Edition -->
+      <div class="pricing-card highlight">
+        <div class="pricing-badge">Elite White‑Label</div>
+        <h3>Elite Edition — $5,000 · up to 20 accounts</h3>
+        <p class="price-line">Full white‑label solution for serious businesses.</p>
+        <ul>
+          <li>Full white‑label branding</li>
+          <li>Custom domain</li>
+          <li>Admin & business tools</li>
+          <li>Team roles & permissions</li>
+          <li>Up to 20 accounts + analytics</li>
+        </ul>
+      </div>
+
+      <!-- Elite Jumbo -->
+      <div class="pricing-card">
+        <div class="pricing-badge">Elite Jumbo</div>
+        <h3>Elite Jumbo — $10,000 · 20 accounts</h3>
+        <p class="price-line">For businesses needing maximum control and automation.</p>
+        <ul>
+          <li>Everything in Elite Edition</li>
+          <li>Every added account gets its OWN Pro Lifetime vault</li>
+          <li>Custom domain & email templates</li>
+          <li>Full admin/workflow automation</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Business Comparison Table -->
+    <div class="pricing-table-wrapper">
+      <table class="pricing-table">
+        <tr>
+          <th>Plan</th>
+          <th>Accounts</th>
+          <th>Uploads & Tools</th>
+          <th>Branding / Domain</th>
+          <th>Automation / Admin</th>
+        </tr>
+        <tr>
+          <td class="plan-name">Business</td>
+          <td>Up to 10</td>
+          <td>Bulk upload, tax tagging, custom categories</td>
+          <td>Standard Warranty Vault branding</td>
+          <td>Business analytics, activity & audit logs</td>
+        </tr>
+        <tr>
+          <td class="plan-name">Business Jumbo</td>
+          <td>10</td>
+          <td>Everything in Business + advanced bulk/automation tools</td>
+          <td>Standard branding</td>
+          <td>Each account gets its own Pro Lifetime vault</td>
+        </tr>
+        <tr>
+          <td class="plan-name">Elite Edition</td>
+          <td>Up to 20</td>
+          <td>Business tools + team roles & permissions</td>
+          <td>Full white‑label branding, custom domain</td>
+          <td>Admin & business tools, analytics</td>
+        </tr>
+        <tr>
+          <td class="plan-name">Elite Jumbo</td>
+          <td>20</td>
+          <td>Everything in Elite Edition</td>
+          <td>Custom domain & email templates</td>
+          <td>Full admin/workflow automation + Pro vaults for all</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </section>
 
@@ -439,7 +878,7 @@
   <h2>About Warranty Vault</h2>
   <p>
     Warranty Vault was created to solve a simple problem: people lose receipts and forget warranty expiry dates.
-    Our mission is to help every household protect their purchases with simple, secure warranty tracking.
+    Our mission is to help every household and business protect their purchases with simple, secure warranty tracking.
   </p>
 </section>
 
@@ -498,6 +937,9 @@
   const toggle = document.getElementById("themeToggle");
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("navMenu");
+  const tabs = document.querySelectorAll(".pricing-tab");
+  const individualContent = document.getElementById("pricing-individual");
+  const businessContent = document.getElementById("pricing-business");
 
   // Dark / Light Mode Toggle
   toggle.addEventListener("click", () => {
@@ -511,9 +953,25 @@
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("show");
   });
+
+  // Pricing Tabs
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      const target = tab.getAttribute("data-tab");
+      if (target === "individual") {
+        individualContent.style.display = "block";
+        businessContent.style.display = "none";
+      } else {
+        individualContent.style.display = "none";
+        businessContent.style.display = "block";
+      }
+    });
+  });
 </script>
 
 </body>
 </html>
-
 
