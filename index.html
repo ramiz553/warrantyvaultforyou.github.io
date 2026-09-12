@@ -5,17 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Warranty Vault</title>
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg: #f5f7fa;
+      --text: #222;
+      --card: #ffffff;
+      --accent: #0078ff;
+      --accent-dark: #005fcc;
+      --footer-bg: #111;
+      --footer-text: #fff;
+    }
+
+    body.dark {
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --card: #161b22;
+      --accent: #3ea6ff;
+      --accent-dark: #1f7bd1;
+      --footer-bg: #000;
+      --footer-text: #ccc;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', Arial, sans-serif;
-      background: #f5f7fa;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
     }
 
     /* Header */
     header {
-      background: #ffffff;
+      background: var(--card);
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
@@ -35,8 +59,20 @@
     nav a {
       margin-left: 20px;
       text-decoration: none;
-      color: #0078ff;
+      color: var(--accent);
       font-weight: 500;
+    }
+
+    /* Theme Toggle */
+    #themeToggle {
+      margin-left: 20px;
+      padding: 8px 14px;
+      background: var(--accent);
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+      font-size: 14px;
     }
 
     /* Hero */
@@ -45,6 +81,7 @@
       padding: 80px 20px;
       max-width: 800px;
       margin: auto;
+      animation: fadeIn 1s ease;
     }
 
     .hero h2 {
@@ -62,7 +99,7 @@
     .btn {
       display: inline-block;
       padding: 14px 28px;
-      background: #0078ff;
+      background: var(--accent);
       color: white;
       text-decoration: none;
       border-radius: 8px;
@@ -72,7 +109,7 @@
     }
 
     .btn:hover {
-      background: #005fcc;
+      background: var(--accent-dark);
     }
 
     /* Features */
@@ -83,38 +120,114 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
+      animation: fadeInUp 1s ease;
     }
 
     .feature-box {
-      background: white;
+      background: var(--card);
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       text-align: center;
+      transition: transform 0.2s;
     }
 
-    .feature-box h3 {
-      margin-top: 0;
-      font-size: 22px;
+    .feature-box:hover {
+      transform: translateY(-5px);
     }
 
-    .feature-box p {
-      color: #555;
-      font-size: 16px;
+    /* Pricing */
+    .pricing {
+      max-width: 900px;
+      margin: 60px auto;
+      text-align: center;
+      animation: fadeInUp 1s ease;
+    }
+
+    .pricing h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .pricing-box {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin: 20px auto;
+      max-width: 500px;
+    }
+
+    /* About */
+    .about {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      animation: fadeInUp 1s ease;
+    }
+
+    .about h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 900px;
+      margin: 60px auto;
+      animation: fadeInUp 1s ease;
+    }
+
+    .faq h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    /* Socials */
+    .socials {
+      text-align: center;
+      margin: 60px auto;
+      animation: fadeInUp 1s ease;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      font-size: 20px;
+      color: var(--accent);
+      text-decoration: none;
     }
 
     /* Footer */
     footer {
-      background: #111;
-      color: white;
+      background: var(--footer-bg);
+      color: var(--footer-text);
       text-align: center;
       padding: 30px;
       margin-top: 60px;
     }
 
     footer a {
-      color: #4da3ff;
+      color: var(--accent);
       text-decoration: none;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -127,7 +240,9 @@
     <a href="/support.html">Support</a>
     <a href="/privacy-policy.html">Privacy</a>
     <a href="/terms.html">Terms</a>
+    <a href="/legal.html">Legal</a>
   </nav>
+  <button id="themeToggle">Dark Mode</button>
 </header>
 
 <section class="hero">
@@ -160,11 +275,68 @@
   </div>
 </section>
 
+<section class="pricing">
+  <h2>Simple, Honest Pricing</h2>
+
+  <div class="pricing-box">
+    <h3>Starter — Free</h3>
+    <p>Perfect for individuals tracking warranties for home, tech, and appliances.</p>
+    <p>✔ Store receipts</p>
+    <p>✔ Track warranty expiry</p>
+    <p>✔ Access from any device</p>
+  </div>
+
+  <div class="pricing-box">
+    <h3>Pro — Coming Soon</h3>
+    <p>Advanced reminders, shared vaults, and priority support.</p>
+  </div>
+</section>
+
+<section class="about">
+  <h2>About Warranty Vault</h2>
+  <p>Warranty Vault was created to solve a simple problem: people lose receipts and forget warranty expiry dates. Our mission is to help every household protect their purchases with simple, secure warranty tracking.</p>
+</section>
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <h3>How does Warranty Vault store my data?</h3>
+    <p>Your receipts and documents are stored securely with industry‑standard encryption.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Will I get reminders before a warranty expires?</h3>
+    <p>Yes — Warranty Vault notifies you ahead of expiry so you have time to act.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I access Warranty Vault from multiple devices?</h3>
+    <p>Yes — Warranty Vault works on desktop, tablet, and mobile.</p>
+  </div>
+</section>
+
+<section class="socials">
+  <h2>Follow Us</h2>
+  <a href="#">Twitter</a>
+  <a href="#">Instagram</a>
+  <a href="#">YouTube</a>
+</section>
+
 <footer>
   <p>© 2026 Warranty Vault — All Rights Reserved</p>
   <p><a href="/support.html">Contact Support</a></p>
 </footer>
 
+<script>
+  const toggle = document.getElementById("themeToggle");
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    toggle.textContent = document.body.classList.contains("dark")
+      ? "Light Mode"
+      : "Dark Mode";
+  });
+</script>
+
 </body>
 </html>
-
