@@ -310,22 +310,57 @@
     }
 
     .pricing-content-wrapper {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
-      gap: 24px;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      .pricing-content-wrapper {
-        grid-template-columns: 1fr;
-      }
+      display: block;
     }
 
     .pricing-content {
       animation: fadeInUp 0.4s ease;
     }
 
+    /* Wide Premium Comparison Table (above cards) */
+    .pricing-table-wrapper {
+      margin-bottom: 26px;
+    }
+
+    .pricing-table-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      text-align: left;
+    }
+
+    .pricing-table th {
+      background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
+      color: #222;
+      font-weight: 600;
+    }
+
+    .pricing-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pricing-table td.plan-name {
+      font-weight: 600;
+    }
+
+    /* Premium Pricing Cards */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -333,7 +368,6 @@
       margin-bottom: 10px;
     }
 
-    /* Premium Pricing Cards */
     .pricing-card {
       background: radial-gradient(circle at top left,
         rgba(245,211,107,0.18),
@@ -402,71 +436,30 @@
       left: 50%;
       transform: translateX(-50%);
       font-size: 11px;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 999px;
       background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
       color: #222;
       border: 1px solid var(--gold-border);
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
       z-index: 5;
-    }
-
-    .pricing-ribbon {
-      position: absolute;
-      top: 0;
-      right: -40px;
-      background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
-      color: #222;
-      padding: 6px 40px;
-      font-size: 11px;
-      font-weight: 600;
-      transform: rotate(35deg);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    /* Comparison table */
-    .pricing-table-wrapper {
-      margin-top: 10px;
-      overflow-x: auto;
-    }
-
-    .pricing-table-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      text-align: left;
-    }
-
-    .pricing-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-      background: var(--card);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .pricing-table th,
-    .pricing-table td {
-      padding: 10px 12px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      text-align: left;
       white-space: nowrap;
     }
 
-    .pricing-table th {
+    /* FIXED Recommended Ribbon */
+    .pricing-ribbon {
+      position: absolute;
+      top: 12px;
+      right: -60px;
       background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
       color: #222;
+      padding: 6px 60px;
+      font-size: 11px;
       font-weight: 600;
-    }
-
-    .pricing-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .pricing-table td.plan-name {
-      font-weight: 600;
+      transform: rotate(25deg);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      white-space: nowrap;
+      z-index: 6;
     }
 
     /* About */
@@ -702,162 +695,7 @@
   </div>
 
   <div class="pricing-content-wrapper">
-    <!-- LEFT: Cards -->
-    <div class="pricing-content" id="pricing-individual">
-      <div class="pricing-grid">
-        <!-- Free Starter -->
-        <div class="pricing-card">
-          <div class="pricing-card-icon">🧾</div>
-          <div class="pricing-badge">Default on signup</div>
-          <h3>Free (Starter)</h3>
-          <p class="price-line">Included when someone signs up.</p>
-          <ul>
-            <li>Up to 10 receipts</li>
-            <li>Basic OCR scanning</li>
-            <li>Basic expiry reminders</li>
-            <li>1 personal vault</li>
-          </ul>
-        </div>
-
-        <!-- Pro Lifetime -->
-        <div class="pricing-card highlight">
-          <div class="pricing-ribbon">Recommended</div>
-          <div class="pricing-card-icon">⭐</div>
-          <div class="pricing-badge">Most Popular</div>
-          <h3>Pro Lifetime — $19.99 · 1 account</h3>
-          <p class="price-line">Lifetime access for one individual account.</p>
-          <ul>
-            <li>Unlimited receipts & warranties</li>
-            <li>Priority OCR receipt scanning</li>
-            <li>Export to PDF & CSV</li>
-            <li>Smart expiry reminders</li>
-            <li>Cloud‑synced personal vault</li>
-          </ul>
-        </div>
-
-        <!-- Family Lifetime -->
-        <div class="pricing-card">
-          <div class="pricing-card-icon">👨‍👩‍👧‍👦</div>
-          <div class="pricing-badge">Household</div>
-          <h3>Family Lifetime — $39.99 · up to 5 accounts</h3>
-          <p class="price-line">Perfect for families managing multiple devices and purchases.</p>
-          <ul>
-            <li>Everything in Pro Lifetime</li>
-            <li>Share with up to 5 accounts</li>
-            <li>Shared family vault</li>
-            <li>Per‑member expiry alerts</li>
-            <li>Family activity overview</li>
-          </ul>
-        </div>
-
-        <!-- Family Jumbo -->
-        <div class="pricing-card">
-          <div class="pricing-card-icon">🏠</div>
-          <div class="pricing-badge">Extended Family</div>
-          <h3>Family Jumbo — $79.99 · 5 accounts</h3>
-          <p class="price-line">For families who want both shared and private vaults.</p>
-          <ul>
-            <li>Everything in Family Lifetime</li>
-            <li>Every added account gets its OWN Pro Lifetime vault (private, not shared)</li>
-            <li>5 full member vaults + priority OCR for everyone</li>
-            <li>Family & individual analytics</li>
-          </ul>
-        </div>
-
-        <!-- Signature Edition -->
-        <div class="pricing-card highlight">
-          <div class="pricing-card-icon">💎</div>
-          <div class="pricing-badge">Signature</div>
-          <h3>Signature Edition — $999 · up to 15 accounts</h3>
-          <p class="price-line">Brand‑focused individual experience with your own look.</p>
-          <ul>
-            <li>Your own logo & brand colours</li>
-            <li>Fully branded dashboard</li>
-            <li>Custom accents & banners</li>
-            <li>Personalised onboarding look</li>
-            <li>Up to 15 accounts</li>
-          </ul>
-        </div>
-
-        <!-- Signature Jumbo -->
-        <div class="pricing-card">
-          <div class="pricing-card-icon">👑</div>
-          <div class="pricing-badge">Signature Jumbo</div>
-          <h3>Signature Jumbo — $1,999 · 15 accounts</h3>
-          <p class="price-line">For larger groups needing branded, individual vaults.</p>
-          <ul>
-            <li>Everything in Signature Edition</li>
-            <li>Every added account gets its OWN Pro Lifetime vault</li>
-            <li>15 full branded vaults + priority OCR everywhere</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="pricing-content" id="pricing-business" style="display:none;">
-      <div class="pricing-grid">
-        <!-- Business -->
-        <div class="pricing-card highlight">
-          <div class="pricing-ribbon">Recommended</div>
-          <div class="pricing-card-icon">📊</div>
-          <div class="pricing-badge">Core Business</div>
-          <h3>Business — $999 · up to 10 team accounts</h3>
-          <p class="price-line">For teams managing receipts, warranties, and tax‑related documents.</p>
-          <ul>
-            <li>Bulk receipt & warranty upload</li>
-            <li>Tax tagging & custom categories</li>
-            <li>Team accounts (up to 10)</li>
-            <li>Business analytics dashboard</li>
-            <li>Activity & audit logs</li>
-          </ul>
-        </div>
-
-        <!-- Business Jumbo -->
-        <div class="pricing-card">
-          <div class="pricing-card-icon">🚀</div>
-          <div class="pricing-badge">Business Jumbo</div>
-          <h3>Business Jumbo — $1,999 · 10 accounts</h3>
-          <p class="price-line">For teams needing both business tools and individual Pro vaults.</p>
-          <ul>
-            <li>Everything in Business</li>
-            <li>Every added account gets its OWN Pro Lifetime vault</li>
-            <li>10 full team vaults</li>
-            <li>Advanced bulk/automation tools</li>
-          </ul>
-        </div>
-
-        <!-- Elite Edition -->
-        <div class="pricing-card highlight">
-          <div class="pricing-card-icon">🏷️</div>
-          <div class="pricing-badge">Elite White‑Label</div>
-          <h3>Elite Edition — $5,000 · up to 20 accounts</h3>
-          <p class="price-line">Full white‑label solution for serious businesses.</p>
-          <ul>
-            <li>Full white‑label branding</li>
-            <li>Custom domain</li>
-            <li>Admin & business tools</li>
-            <li>Team roles & permissions</li>
-            <li>Up to 20 accounts + analytics</li>
-          </ul>
-        </div>
-
-        <!-- Elite Jumbo -->
-        <div class="pricing-card">
-          <div class="pricing-card-icon">⚙️</div>
-          <div class="pricing-badge">Elite Jumbo</div>
-          <h3>Elite Jumbo — $10,000 · 20 accounts</h3>
-          <p class="price-line">For businesses needing maximum control and automation.</p>
-          <ul>
-            <li>Everything in Elite Edition</li>
-            <li>Every added account gets its OWN Pro Lifetime vault</li>
-            <li>Custom domain & email templates</li>
-            <li>Full admin/workflow automation</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- RIGHT: Comparison Table (split layout) -->
+    <!-- WIDE PREMIUM TABLE ABOVE CARDS -->
     <div class="pricing-table-wrapper">
       <div class="pricing-table-title" id="table-title">
         Individual Plan Comparison
@@ -913,6 +751,152 @@
           <td>15 full branded vaults</td>
         </tr>
       </table>
+    </div>
+
+    <!-- INDIVIDUAL CARDS -->
+    <div class="pricing-content" id="pricing-individual">
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-card-icon">🧾</div>
+          <div class="pricing-badge">Default on signup</div>
+          <h3>Free (Starter)</h3>
+          <p class="price-line">Included when someone signs up.</p>
+          <ul>
+            <li>Up to 10 receipts</li>
+            <li>Basic OCR scanning</li>
+            <li>Basic expiry reminders</li>
+            <li>1 personal vault</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card highlight">
+          <div class="pricing-ribbon">Recommended</div>
+          <div class="pricing-card-icon">⭐</div>
+          <div class="pricing-badge">Most Popular</div>
+          <h3>Pro Lifetime — $19.99 · 1 account</h3>
+          <p class="price-line">Lifetime access for one individual account.</p>
+          <ul>
+            <li>Unlimited receipts & warranties</li>
+            <li>Priority OCR receipt scanning</li>
+            <li>Export to PDF & CSV</li>
+            <li>Smart expiry reminders</li>
+            <li>Cloud‑synced personal vault</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-card-icon">👨‍👩‍👧‍👦</div>
+          <div class="pricing-badge">Household</div>
+          <h3>Family Lifetime — $39.99 · up to 5 accounts</h3>
+          <p class="price-line">Perfect for families managing multiple devices and purchases.</p>
+          <ul>
+            <li>Everything in Pro Lifetime</li>
+            <li>Share with up to 5 accounts</li>
+            <li>Shared family vault</li>
+            <li>Per‑member expiry alerts</li>
+            <li>Family activity overview</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-card-icon">🏠</div>
+          <div class="pricing-badge">Extended Family</div>
+          <h3>Family Jumbo — $79.99 · 5 accounts</h3>
+          <p class="price-line">For families who want both shared and private vaults.</p>
+          <ul>
+            <li>Everything in Family Lifetime</li>
+            <li>Every added account gets its OWN Pro Lifetime vault (private, not shared)</li>
+            <li>5 full member vaults + priority OCR for everyone</li>
+            <li>Family & individual analytics</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card highlight">
+          <div class="pricing-card-icon">💎</div>
+          <div class="pricing-badge">Signature</div>
+          <h3>Signature Edition — $999 · up to 15 accounts</h3>
+          <p class="price-line">Brand‑focused individual experience with your own look.</p>
+          <ul>
+            <li>Your own logo & brand colours</li>
+            <li>Fully branded dashboard</li>
+            <li>Custom accents & banners</li>
+            <li>Personalised onboarding look</li>
+            <li>Up to 15 accounts</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-card-icon">👑</div>
+          <div class="pricing-badge">Signature Jumbo</div>
+          <h3>Signature Jumbo — $1,999 · 15 accounts</h3>
+          <p class="price-line">For larger groups needing branded, individual vaults.</p>
+          <ul>
+            <li>Everything in Signature Edition</li>
+            <li>Every added account gets its OWN Pro Lifetime vault</li>
+            <li>15 full branded vaults + priority OCR everywhere</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUSINESS CARDS -->
+    <div class="pricing-content" id="pricing-business" style="display:none;">
+      <div class="pricing-grid">
+        <div class="pricing-card highlight">
+          <div class="pricing-ribbon">Recommended</div>
+          <div class="pricing-card-icon">📊</div>
+          <div class="pricing-badge">Core Business</div>
+          <h3>Business — $999 · up to 10 team accounts</h3>
+          <p class="price-line">For teams managing receipts, warranties, and tax‑related documents.</p>
+          <ul>
+            <li>Bulk receipt & warranty upload</li>
+            <li>Tax tagging & custom categories</li>
+            <li>Team accounts (up to 10)</li>
+            <li>Business analytics dashboard</li>
+            <li>Activity & audit logs</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-card-icon">🚀</div>
+          <div class="pricing-badge">Business Jumbo</div>
+          <h3>Business Jumbo — $1,999 · 10 accounts</h3>
+          <p class="price-line">For teams needing both business tools and individual Pro vaults.</p>
+          <ul>
+            <li>Everything in Business</li>
+            <li>Every added account gets its OWN Pro Lifetime vault</li>
+            <li>10 full team vaults</li>
+            <li>Advanced bulk/automation tools</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card highlight">
+          <div class="pricing-card-icon">🏷️</div>
+          <div class="pricing-badge">Elite White‑Label</div>
+          <h3>Elite Edition — $5,000 · up to 20 accounts</h3>
+          <p class="price-line">Full white‑label solution for serious businesses.</p>
+          <ul>
+            <li>Full white‑label branding</li>
+            <li>Custom domain</li>
+            <li>Admin & business tools</li>
+            <li>Team roles & permissions</li>
+            <li>Up to 20 accounts + analytics</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-card-icon">⚙️</div>
+          <div class="pricing-badge">Elite Jumbo</div>
+          <h3>Elite Jumbo — $10,000 · 20 accounts</h3>
+          <p class="price-line">For businesses needing maximum control and automation.</p>
+          <ul>
+            <li>Everything in Elite Edition</li>
+            <li>Every added account gets its OWN Pro Lifetime vault</li>
+            <li>Custom domain & email templates</li>
+            <li>Full admin/workflow automation</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -999,7 +983,7 @@
     navMenu.classList.toggle("show");
   });
 
-  // Animated Tab Transitions
+  // Animated Tab Transitions + Table Swap
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
       tabs.forEach(t => t.classList.remove("active"));
@@ -1105,7 +1089,6 @@
         `;
       }
 
-      // Simple fade animation for table
       pricingTable.style.opacity = 0;
       setTimeout(() => {
         pricingTable.style.opacity = 1;
