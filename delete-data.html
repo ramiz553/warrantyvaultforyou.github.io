@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Data — Warranty Vault</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --text: #222;
+      --card: #ffffff;
+      --accent: #0078ff;
+      --accent-dark: #005fcc;
+      --gold-start: #f5d36b;
+      --gold-end: #c9a23f;
+      --gold-border: #b38b2c;
+      --footer-bg: #111;
+      --footer-text: #fff;
+    }
+
+    body.dark {
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --card: #161b22;
+      --accent: #3ea6ff;
+      --accent-dark: #1f7bd1;
+      --footer-bg: #000;
+      --footer-text: #ccc;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: var(--card);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    header .logo img {
+      height: 60px;
+      width: auto;
+    }
+
+    header .logo h1 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
+      color: #222;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      border: 1px solid var(--gold-border);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      text-align: center;
+      padding: 24px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="/assets/logo.png" alt="Warranty Vault Logo">
+    <h1>Warranty Vault</h1>
+  </div>
+</header>
+
+<div class="content">
+  <h2>Delete Your Data</h2>
+
+  <div class="card">
+    <p>You can delete individual data items inside the Warranty Vault app without deleting your entire account.</p>
+
+    <h3>Data you can delete yourself</h3>
+    <ul>
+      <li>Receipts</li>
+      <li>Uploaded photos/documents</li>
+      <li>Notes</li>
+      <li>Warranties</li>
+      <li>Vaults</li>
+      <li>Checklists</li>
+      <li>Social posts & comments</li>
+      <li>Direct messages</li>
+      <li>Team/vault chat messages</li>
+      <li>Notifications</li>
+      <li>Company updates (if applicable)</li>
+      <li>Devices/sessions (Trusted Devices)</li>
+    </ul>
+
+    <h3>Request additional data deletion</h3>
+    <p>If you want us to delete additional data for you, email:</p>
+    <p><strong>support@warrantyvaultforyou.com</strong></p>
+
+    <p>Use the subject:</p>
+    <p><strong>“Delete my data”</strong></p>
+
+    <h3>Data not deleted unless you delete your account</h3>
+    <ul>
+      <li>Login credentials</li>
+      <li>Profile photo</li>
+      <li>Purchase history</li>
+      <li>Company/team memberships</li>
+    </ul>
+  </div>
+
+  <a class="btn" href="/support.html">Contact Support</a>
+</div>
+
+<footer>
+  <p>© 2026 Warranty Vault — All Rights Reserved</p>
+  <p><a href="/support.html">Contact Support</a></p>
+</footer>
+
+</body>
+</html>
